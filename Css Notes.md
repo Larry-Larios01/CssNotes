@@ -246,6 +246,34 @@ border: 5px solid black,
 you can see mor information in: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
 
 
+**How css works**
+
+
+first whats the DOM (document object model): is a standart model that represent the structure of a html document to a tree nodes, in the dom is where the html and css meetup
+
+
+how css works: 
+
+![Rendering process overview](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works/rendering.svg)
+
+
+1: html is load
+2: html is converting in a DOM
+3: the browser add the resources like images, videos and the linked css= <link rel="stylesheet" href="estilos.css">
+4: the browser search the different slectors based in the type of selectors it deppends how is apllied in to the DOM
+5:the browser render the page after the rules of the selectors
+6: the visual display of the display is shown on the screen
+
+
+to more information visit: https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_works
+
+
+
+
+
+
+
+
 
 
 
