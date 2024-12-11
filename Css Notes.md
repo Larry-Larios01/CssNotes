@@ -84,5 +84,179 @@ heading is for put headers the greatest header is 1 then the header 2 , and so o
 yo can put hypertext whit that element and in the href attr put the link
 
 
+For more information about html click here: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
+
+
+
+
+**CSS**
+
+
+
+Css (cascading style sheets), is a markup language  and i sthe lenguage which to change the style of html elements.
+
+
+the form to call the styles of css in the html  in the element <head >
+
+```
+<link href="styles/style.css" rel="stylesheet" />
+```
+
+
+**Anatomy of css ruleset**
+
+
+```
+p {
+  color: red;
+}
+```
+
+the selector: p is the html element 
+
+declaration: `color: red;` it specifies which of the elements properties you want to style
+
+properties: is the property you want to change 
+
+
+property value: "red" is the value to change in the property 
+
+
+
+if you want change multiple properties you can use semi colons , remember put semicolons after the selector 
+
+
+```
+p {
+  color: red;
+  width: 500px;
+  border: 1px solid black;
+}
+```
+
+you can select multiple elements with that form put comma after the element: 
+
+```
+p,
+li,
+h1 {
+  color: red;
+}
+```
+
+
+
+different types of selectors
+
+
+element selector : you put the name of the element directly , 
+
+`p`  
+selects `<p>`
+
+
+id selector: is a specific element of the page but with id 
+
+`#my-id`  
+selects `<p id="my-id">` or `<a id="my-id">`
+
+
+```
+#my-id{
+  color: red;
+}
+```
+
+class selector: the elements on the page with the specified class 
+`.my-class`  
+selects `<p class="my-class">` and `<a class="my-class">`
+
+```
+.my-class{
+  color: red;
+}
+```
+
+
+Attribute selector: the element on the page with specified attribute 
+
+`img[src]`  
+selects `<img src="my-image.png">` but not `<img>`
+
+Pseudo-class selector: The specified element(s), but only when in the specified state. (For example, when a cursor hovers over a link.):
+
+`a:hover`  
+selects `<a>`, but only when the mouse pointer is hovering over the link.
+
+
+**put special fonts on the html**
+
+
+in the element <head> we put the font from google in the element link ```
+<link
+  href="https://fonts.googleapis.com/css?family=Open+Sans"
+  rel="stylesheet" />
+```
+
+
+then we configure the html elment in the css file with the font we want and the size of the letters
+
+```
+html {
+  font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high */
+  font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google Fonts */
+}
+```
+
+
+**css layout**
+![[box-model.png]]
+
+- `padding`, the space around the content. In the example below, it is the space around the paragraph text.
+- `border`, the solid line that is just outside the padding.
+- `margin`, the space around the outside of the border.
+
+explain : 
+```
+body {
+  width: 600px;
+  margin: 0 auto;
+  background-color: #ff9500;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+```
+
+width: defines how width the body is in that case is 600px
+margin:0 auto; center the body horizontal, without a margin cause is 0 and calculate the margins left and right to center the body 
+
+background-color: #ff9500;
+
+put the color of the background of the body and the value is the color in rgb (is like an orange the color )
+
+padding: 0 20px 20px 20px;
+defines the padding of the body and you can see the numbers like a clock the first 0: without space in the top , then 20px , 20px in the right part, and so on
+
+
+border: 5px solid black, 
+
+5px is the wide of the border and after we can see the color which is solid black
+
+
+you can see mor information in: https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
