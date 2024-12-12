@@ -503,15 +503,300 @@ and we can put the scroll in diferents axes (x,y) y for vertical and x for horiz
 
 
 
+**example of sizing elements**
+
+```
+<div class="box">I have margin and padding set to 10% on all sides.</div>
+```
+
+```
+body {
+  font: 1.2em sans-serif;
+}
+.box {
+  border: 5px solid darkblue;
+  width: 200px;
+  margin: 10%;
+  padding: 10%;
+}
+```
+![[Pasted image 20241212110259.png]]
+
+
+
+**sizing images**
+
+
+if the image is greater tahn the container sizes we use object-fit to fit that elemnt in the container correctly:
+
+```
+<div class="wrapper">
+  <div class="box">
+    <img
+      alt="balloons"
+      class="cover"
+      src="https://mdn.github.io/shared-assets/images/examples/balloons.jpg" />
+  </div>
+  <div class="box">
+    <img
+      alt="balloons"
+      class="contain"
+      src="https://mdn.github.io/shared-assets/images/examples/balloons.jpg" />
+  </div>
+</div>
+```
+
+```
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.wrapper > * {
+  margin: 20px;
+}
+
+.box {
+  border: 5px solid darkblue;
+  width: 200px;
+  height: 200px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.contain {
+  object-fit: contain;
+}
+```
+
+
+
+when we use contain the object change the scale to fit correctly into the conteiner.
+
+**styling form**
+
+```
+<form>
+  <div><label for="name">Name</label> <input id="name" type="text" /></div>
+  <div><label for="email">Email</label> <input id="email" type="email" /></div>
+
+  <div class="buttons"><input type="submit" value="Submit" /></div>
+</form>
+```
+```
+input[type="text"],
+input[type="email"] {
+  border: 2px solid #000;
+  margin: 0 0 1em 0;
+  padding: 10px;
+  width: 80%;
+}
+
+input[type="submit"] {
+  border: 3px solid #333;
+  background-color: #999;
+  border-radius: 5px;
+  padding: 10px 2em;
+  font-weight: bold;
+  color: #fff;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #333;
+}
+```
+
+and if we wanna use inheritance we can put like that: 
+```
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
+```
+
+
+**styling tables**
+```
+<table>
+  <caption>
+    A summary of the UK's most famous punk bands
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Band</th>
+      <th scope="col">Year formed</th>
+      <th scope="col">No. of Albums</th>
+      <th scope="col">Most famous song</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Buzzcocks</th>
+      <td>1976</td>
+      <td>9</td>
+      <td>Ever fallen in love (with someone you shouldn't've)</td>
+    </tr>
+    <tr>
+      <th scope="row">The Clash</th>
+      <td>1976</td>
+      <td>6</td>
+      <td>London Calling</td>
+    </tr>
+
+    <!-- several other great bands -->
+
+    <tr>
+      <th scope="row">The Stranglers</th>
+      <td>1974</td>
+      <td>17</td>
+      <td>No More Heroes</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row" colspan="2">Total albums</th>
+      <td colspan="2">77</td>
+    </tr>
+  </tfoot>
+</table>
+```
+```
+/* spacing */
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid purple;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th,
+td {
+  padding: 20px;
+}
+```
+
+
+the table-layout: fixed;: saids the width of the columns will be calculate wuth the total width and the width of the columns
+
+
+
+width: 100% the table use the 100% of the container
+
+thead th:nth-child(n): selects the header th in teb position n in to the row <thead>
+
+for example thead th:nth-child(1): aplies to the first header
+
+
+and width: x%, is to describe the width of the header
+
+
+
+**advanced styling effects**
+
+we have for example a shadow 
+
+```
+<article class="simple">
+  <p>
+    <strong>Warning</strong>: The thermostat on the cosmic transcender has
+    reached a critical level.
+  </p>
+</article>
+```
+
+```
+p {
+  margin: 0;
+}
+
+article {
+  max-width: 500px;
+  padding: 10px;
+  background-color: red;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0%),
+    rgb(0 0 0 / 25%)
+  );
+}
+
+.simple {
+  box-shadow: 5px 5px 5px rgb(0 0 0 / 70%);
+}
+```
+
+![[Pasted image 20241212114021.png]]
+![[Pasted image 20241212114433.png]]
 
 
 
 
+And also we can put filters, like gray of blurry, with the property filter: 
+
+```
+<div class="wrapper">
+  <div class="box">
+    <img
+      alt="balloons"
+      class="blur"
+      src="https://mdn.github.io/shared-assets/images/examples/balloons.jpg" />
+  </div>
+  <div class="box">
+    <img
+      alt="balloons"
+      class="grayscale"
+      src="https://mdn.github.io/shared-assets/images/examples/balloons.jpg" />
+  </div>
+</div>
+```
+```
+img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.blur {
+  filter: blur(10px);
+}
+
+.grayscale {
+  filter: grayscale(60%);
+}
+```
+
+![[Pasted image 20241212114614.png]]
 
 
 
-
-
-
-
+if you want more information visit: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks
 
