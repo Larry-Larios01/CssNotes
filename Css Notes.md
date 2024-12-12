@@ -188,6 +188,38 @@ Pseudo-class selector: The specified element(s), but only when in the specified 
 `a:hover`  
 selects `<a>`, but only when the mouse pointer is hovering over the link.
 
+Desendant combianator: select elements descendents from the another element 
+
+```
+body article p {
+}
+```
+
+article is in body 
+
+but is a direct child we use: 
+
+```
+ul > li {
+  border-top: 5px solid red;
+}
+```
+
+li , is the direct child from the ul:
+```
+<ul>
+  <li>Unordered item</li>
+  <li>
+    Unordered item
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ol>
+  </li>
+</ul>
+```
+we use + when we put styles to element only if it appears after the other element:
+p + img { border: 5px solid red; }
 
 **put special fonts on the html**
 
@@ -270,9 +302,204 @@ to more information visit: https://developer.mozilla.org/en-US/docs/Learn/CSS/Fi
 
 
 
+**Cascade in css**
+
+if we put two or more declarations in the same selector wins the last declaration, for example: 
+
+```
+h1 {
+  color: red;
+}
+h1 {
+  color: blue;
+}
+```
+
+the second h1 wins and the color will be blue
+
+
+**specificity**
+
+when we have two selectors of the same element it takes the more specific in that example we have the element selector and the class selector for be more specific it takes class selector 
+
+```
+.main-heading {
+  color: red;
+}
+
+h1 {
+  color: blue;
+}
+```
+so instead of take the blue it takes the color red
+
+
+**inheritance**
+
+when we have a nested element the if the principal element has the a specific property value it shows up in all the element, but if we have a selector of specific element it changes to it value
+
+```
+body {
+  color: blue;
+}
+
+span {
+  color: black;
+}
+```
+
+for example span is in body but it has the black color cause we specify that in the selector
+
+**Cascade layers**
+is used to organize  and prioritize the styles rules more clear, it helps in a big projects where we have multiple css fonts
+
+
+```
+/* file: layers1.css */
+
+/* unlayered styles */
+body {
+  color: #333;
+}
+
+/* creates the first layer: `layout` */
+@layer layout {
+  main {
+    display: grid;
+  }
+}
+
+/* creates the second layer: an unnamed, anonymous layer */
+@layer {
+  body {
+    margin: 0;
+  }
+}
+
+/* creates the third and fourth layers: `theme` and `utilities` */
+@layer theme, layout, utilities;
+
+/* adds styles to the already existing `layout` layer */
+@layer layout {
+  main {
+    color: #000;
+  }
+}
+
+/* creates the fifth layer: an unnamed, anonymous layer */
+@layer {
+  body {
+    margin: 1vw;
+  }
+}
+```
+
+it takes from the last from the first statement; 
+
+
+**box model in css**
+
+![[Pasted image 20241212102537.png]]
+
+
+-content box: the area where your content is displayd size it with, inline-size, cloxk-size, height, width
+
+-padding box: padding sit around the content as white space, we use the padding special name
+-border: the border box wraps the content and any padding; we use border
+-margin box: wrap all the element we said before, and we use padding 
+
+
+a example of a box is: 
+
+```
+.box {
+  width: 350px;
+  height: 150px;
+  margin: 10px;
+  padding: 25px;
+  border: 5px solid black;
+}
+```
+
+
+**handling different text directions**
+
+writing-mode is used to put the direction on the text for example, 
+
+```
+body {
+  font-family: sans-serif;
+  height: 300px;
+}
+h1 {
+  writing-mode: vertical-rl;
+  color: white;
+  background-color: black;
+  padding: 10px;
+}
+```
 
 
 
+that text is put on vertical-rgiht to the left and we have diferent words like;
+
+horizontal-tb: top-to-bottom block flow direction, sentences run horizontally
+
+vertical-rl: vertical to the left
+
+vertical-lr: vertical to the right 
+
+
+**overflow content**
+
+is when the content of the element dont fit in the dimensions of the element (width, height)
+
+
+you can fit it with the property overflow:
+```
+<div class="box">
+  This box has a height and a width. This means that if there is too much
+  content to be displayed within the assigned height, there will be an overflow
+  situation. If overflow is set to hidden then any overflow will not be visible.
+</div>
+
+<p>This content is outside of the box.</p>
+```
+
+```
+.box {
+  border: 1px solid #333333;
+  width: 250px;
+  height: 100px;
+  overflow: hidden;
+}
+```
+
+![[Pasted image 20241212105125.png]]
+
+
+we can surf in to teh text with a scroll if we put 
+
+overflow: scroll;
+
+and we can put the scroll in diferents axes (x,y) y for vertical and x for horizontal
+
+```
+.word {
+  border: 5px solid #333333;
+  width: 100px;
+  font-size: 250%;
+  overflow-x: scroll;
+}
+```
+
+**css values and units**
+
+![[Pasted image 20241212105530.png]]
+
+![[Pasted image 20241212105554.png]]
+
+![[Pasted image 20241212105630.png]]
 
 
 
