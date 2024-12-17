@@ -36,20 +36,6 @@
             }
           },
           {
-            "id": "994ef933d8921008",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "posible_endpoints/Posible endpoits.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Posible endpoits"
-            }
-          },
-          {
             "id": "af8df947d538c296",
             "type": "leaf",
             "state": {
@@ -75,6 +61,20 @@
               },
               "icon": "lucide-file",
               "title": "Vue js"
+            }
+          },
+          {
+            "id": "7d1000b2a28c05a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Posible endpoints.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Posible endpoints"
             }
           }
         ],
@@ -219,14 +219,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d5733d4c5543bf87",
+  "active": "7d1000b2a28c05a0",
   "lastOpenFiles": [
-    "Asincronia en python.md",
+    "Pasted image 20241216151555.png",
+    "Pasted image 20241216152312.png",
+    "Pasted image 20241216153740.png",
+    "Posible endpoits.md",
     "Vue js.md",
+    "Posible endpoints.md",
+    "Css Notes.md",
     "posible_endpoints/Posible endpoits.md",
+    "Asincronia en python.md",
     "posible_endpoints/Posible endpoits 1.md",
     "posible endpoints.md",
-    "Css Notes.md",
     "posible_endpoints/Pasted image 20241216153740.png",
     "posible_endpoints/Pasted image 20241216152312.png",
     "posible_endpoints/Pasted image 20241216151555.png",
@@ -236,8 +241,6 @@
     "Pasted image 20241212150508.png",
     "Pasted image 20241212145931.png",
     "Pasted image 20241212114614.png",
-    "Pasted image 20241212114433.png",
-    "Pasted image 20241212114325.png",
     "Welcome.md",
     "Css notes.md"
   ]
