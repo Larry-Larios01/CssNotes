@@ -855,3 +855,48 @@ The frogs are spread all over the pond, but the lilypads are bunched at the top.
     stretch: Lines are stretched to fit the container.
 
 This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.
+
+
+**css grid **
+
+we put the container in mode grid putting in display grid instead of flex
+```
+.container {
+  display: grid;
+}
+```
+
+
+we can create columns with grid-template-columns:
+```
+.container {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+}
+```
+
+![[Pasted image 20241212145931.png]]
+
+
+we can use the unit fr , how it works?
+
+for example if i create 1fr 1fr 1fr, im creating 3 columns of 1/3 each one couse are 3 columns
+
+```
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+```
+
+![[Pasted image 20241212150508.png]]
+
+
+in that example we have 2/4 1/4 /14
+
+
+
+and we can put a gap between the columns:
+
+![[Pasted image 20241212150633.png]]
+
